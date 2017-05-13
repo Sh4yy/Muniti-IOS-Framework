@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F76A6A51EC78DB0004D7BA4 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F76A6A41EC78DB0004D7BA4 /* DataHandling.swift */; };
+		4F76A6A71EC79082004D7BA4 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F76A6A61EC79082004D7BA4 /* DataHandling.swift */; };
 		E4CAF40F1EC752BB00DBA9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF40E1EC752BB00DBA9ED /* AppDelegate.swift */; };
 		E4CAF4111EC752BB00DBA9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF4101EC752BB00DBA9ED /* ViewController.swift */; };
 		E4CAF4141EC752BB00DBA9ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4CAF4121EC752BB00DBA9ED /* Main.storyboard */; };
@@ -31,7 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4F76A6A41EC78DB0004D7BA4 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataHandling.swift; path = ../DataHandling.swift; sourceTree = "<group>"; };
+		4F76A6A61EC79082004D7BA4 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
 		E4CAF40B1EC752BB00DBA9ED /* MunitiLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunitiLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CAF40E1EC752BB00DBA9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4CAF4101EC752BB00DBA9ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,7 +87,7 @@
 		E4CAF40D1EC752BB00DBA9ED /* MunitiLogger */ = {
 			isa = PBXGroup;
 			children = (
-				4F76A6A41EC78DB0004D7BA4 /* DataHandling.swift */,
+				4F76A6A61EC79082004D7BA4 /* DataHandling.swift */,
 				E4CAF42E1EC752DC00DBA9ED /* Storage.swift */,
 				E4CAF4301EC752EE00DBA9ED /* MunitiRegister.swift */,
 				E4CAF4341EC753BC00DBA9ED /* MunitiStats.swift */,
@@ -222,7 +222,7 @@
 				E4CAF4311EC752EE00DBA9ED /* MunitiRegister.swift in Sources */,
 				E4CAF42F1EC752DC00DBA9ED /* Storage.swift in Sources */,
 				E4CAF4351EC753BC00DBA9ED /* MunitiStats.swift in Sources */,
-				4F76A6A51EC78DB0004D7BA4 /* DataHandling.swift in Sources */,
+				4F76A6A71EC79082004D7BA4 /* DataHandling.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
