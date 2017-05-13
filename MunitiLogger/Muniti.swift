@@ -8,13 +8,21 @@
 
 import Foundation
 
+typealias JSON = [String : Any]
+
 class Muniti {
     
     let statics : MunitiStats
-    typealias JSON = [String : Any]
+    let http : MunitiHTTP
     
     init(){
+        self.http = MunitiHTTP()
         self.statics = MunitiStats()
+        
+        if statics.isFirstSession {
+            http.register()
+        }
+        
     }
     
     /// this is the log funtion with types
@@ -28,6 +36,7 @@ class Muniti {
         
         // this is a sample json file
         let json : JSON = ["uid" : "self.uid", "log" : text, "type" : type, "date" : statics.unix]
+        
     }
     
     func warning(_ text : String) {

@@ -170,6 +170,10 @@ enum MunitiStatsStorage:String {
     
     ///Stores a list of durations to storage
     case durationStorageArray = "duration storage array"
+    
+    ///Stores the users unique identifier
+    case userId = "user id"
+    
 }
 
 /// Returns the app's current version

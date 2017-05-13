@@ -15,15 +15,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         test()
-        
-        let storage = LocalStorage()
-        let x = [1,2,3,4,5]
-
-        storage["hji"] = Node(x)
-        
-        print(storage["hji"].anyObject as? [Int])
-        
-        
     }
 
    
