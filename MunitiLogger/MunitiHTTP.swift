@@ -45,6 +45,7 @@ class MunitiHTTP {
                 ]
         ]
         
+        
         makeRequest( makeRoute(.register), json, .PATCH)
         
     }
@@ -59,7 +60,7 @@ class MunitiHTTP {
     }
     
     /// this will be the endpoint of every request
-    func makeRequest(_ route : String, _ json : JSON, _ method : httpMethods = .POST) {
+    func makeRequest(_ route : String, _ json : JSON, _ method : httpMethods = .POST, completion : ((Data?, URLResponse?, Error?) -> Void)? = nil) {
         guard let url = URL(string: route) else { return }
         var request = URLRequest(url: url)
         
@@ -73,7 +74,13 @@ class MunitiHTTP {
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        let session = URLSession.shared.dataTask(with: request)
+        let session = URLSession.shared.dataTask(with: request) { (data, urlResponse, error) in
+            if completion != nil {
+                completion!(data, urlResponse, error)
+            }
+        }
+        
+        
         session.resume()
     }
     

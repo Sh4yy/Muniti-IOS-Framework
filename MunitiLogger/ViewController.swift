@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         sleep(2)
         
         Logger.log("new button touched")
+      
         
     }
 

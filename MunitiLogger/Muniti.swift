@@ -22,8 +22,10 @@ class Muniti {
     
     func setup(){
         
-        print(self.statics.firstSession)
+        // start registering the user activity
+        Logger.statics.registerSession()
         
+        // if its first session, register the user on firebase
         if statics.isFirstSession {
             http.register()
         }

@@ -12,6 +12,10 @@ fileprivate let storage = LocalStorage()
 
 typealias UnixTime = Double
 
+extension Array where Element : Double {
+    
+}
+
 class MunitiStats {
     
     let sessionStarted : Double
@@ -24,16 +28,8 @@ class MunitiStats {
         self.sessionStarted = Date().timeIntervalSince1970
     }
     
-    var averageSessionDuration : Double {
-        
-        let tda = self.durationArray
-        let total = tda.reduce(0, +)
-        let count = tda.count
-        
-        print("count ; \(count)")
-        
-        return total/Double(count)
-        
+    var averageSessionDuration : Double? {
+        return durationArray.computedAverage
     }
     
     var currentSessionDuration : Double {
