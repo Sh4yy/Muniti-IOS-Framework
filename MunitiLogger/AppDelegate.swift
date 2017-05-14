@@ -8,7 +8,7 @@
 
 import UIKit
 
-let Logger = Muniti() 
+let Logger = Muniti(url : "https://muniti-79a0b.firebaseio.com", token : "------")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        
         Logger.statics.registerSession()
+        Logger.setup()
         
         return true
     }

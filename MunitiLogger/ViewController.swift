@@ -14,11 +14,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        test()
+        //test()
+        
+        Logger.warning("hey this is a warning message")
+        
+        sleep(2)
+        
+        Logger.error("this app just crashed")
+        
+        sleep(2)
+        
+        Logger.log("new button touched")
+        
     }
 
    
     func test() {
+        
+        print("first open")
+        print(Logger.statics.isFirstSession)
         
         print("app version")
         print(appVersion() ?? "not available")

@@ -122,7 +122,6 @@ class MunitiStats {
         addNewDurationToStorage()
     }
     
-    
     /// return an array with durations from previous sessions
     private var durationArray : [Double] {
         let timeDuration = [Double]()

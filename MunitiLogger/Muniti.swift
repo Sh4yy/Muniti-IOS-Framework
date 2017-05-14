@@ -15,27 +15,33 @@ class Muniti {
     let statics : MunitiStats
     let http : MunitiHTTP
     
-    init(){
-        self.http = MunitiHTTP()
+    init(url : String, token : String){
+        self.http = MunitiHTTP(url: url, token : token)
         self.statics = MunitiStats()
+    }
+    
+    func setup(){
+        
+        print(self.statics.firstSession)
         
         if statics.isFirstSession {
             http.register()
         }
-        
     }
     
     /// this is the log funtion with types
-    func log(_ text : String, type : conditions) {
+    func log(_ text : String, type : conditions = .log) {
         self.log(text, type: type.rawValue)
     }
     
     /// this is the general log funtion
-    func log(_ text : String, type : String = "") {
+    func log(_ text : String, type : String) {
         // here we will send the data with user id to the server
         
         // this is a sample json file
-        let json : JSON = ["uid" : "self.uid", "log" : text, "type" : type, "date" : statics.unix]
+        
+        
+        self.http.log(text, type)
         
     }
     
