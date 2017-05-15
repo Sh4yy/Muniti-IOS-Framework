@@ -28,7 +28,32 @@ class ViewController: UIViewController {
         
         Logger.log("new button touched")
         
-        cache = SimpleCache(autoRemove: true, afterMins: 3, refreshRatePerMin: 1)
+        cache = SimpleCache(autoRemove: true, afterMins: 1, refreshRatePerMin: 1)
+        
+        cacheTest()
+        
+    }
+    
+    func cacheTest() {
+        
+        cache["password"] = "myPass"
+        cache["image"] = #imageLiteral(resourceName: "shitty")
+        cache["button"] = UIButton()
+        cache["array"] = [1,34,5,65,3,4,3]
+        
+        print("cache count = \(cache.count)")
+        
+        background {
+            sleep(30)
+            mainQueue {
+                self.cache["new"] = 234.0
+            }
+            sleep(40)
+        }.then {
+            mainQueue {
+                print("cache count = \(self.cache.count)")
+            }
+        }.run()
         
     }
     

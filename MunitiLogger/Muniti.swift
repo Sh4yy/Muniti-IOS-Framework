@@ -15,6 +15,13 @@ class Muniti {
     let statics : MunitiStats
     let http : MunitiHTTP
     
+    /// if true, will send log to console
+    var consoleVerbose : Bool = true
+    
+    /// if true, will send log to firebase
+    var firebaseVerbose : Bool = true
+    
+    
     init(url : String, token : String){
         self.http = MunitiHTTP(url: url, token : token)
         self.statics = MunitiStats()
@@ -40,10 +47,8 @@ class Muniti {
     func log(_ text : String, type : String) {
         // here we will send the data with user id to the server
         
-        // this is a sample json file
-        
-        
-        self.http.log(text, type)
+        if firebaseVerbose { self.http.log(text, type) }
+        if consoleVerbose { print("\(type) \(text)") }
         
     }
     
