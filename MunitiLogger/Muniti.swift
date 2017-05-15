@@ -28,7 +28,6 @@ class Muniti {
     }
     
     func setup(){
-        
         // start registering the user activity
         Logger.statics.registerSession()
         
@@ -39,33 +38,46 @@ class Muniti {
     }
     
     /// this is the log funtion with types
-    func log(_ text : String, type : conditions = .log) {
-        self.log(text, type: type.rawValue)
+    func log(_ text : String, type : conditions = .log, _ condition : LogCases = .both) {
+        self.log(text, type: type.rawValue, condition)
     }
     
     /// this is the general log funtion
-    func log(_ text : String, type : String) {
+    func log(_ text : String, type : String, _ condition : LogCases = .both) {
         // here we will send the data with user id to the server
         
-        if firebaseVerbose { self.http.log(text, type) }
-        if consoleVerbose { print("\(type) \(text)") }
+        switch condition {
+            case .both:
+                if firebaseVerbose { self.http.log(text, type) }
+                if consoleVerbose { print("\(type) \(text)") }
+            case .console:
+                if consoleVerbose { print("\(type) \(text)") }
+            case .firebase:
+                if firebaseVerbose { self.http.log(text, type) }
+        }
         
     }
     
-    func warning(_ text : String) {
-        log(text, type: .warning)
+    enum LogCases {
+        case firebase
+        case console
+        case both
     }
     
-    func error(_ text : String) {
-        log(text, type: .error)
+    func warning(_ text : String, _ condition : LogCases = .both) {
+        log(text, type: .warning, condition)
     }
     
-    func newUser(_ text : String) {
-        log(text, type: .newUser)
+    func error(_ text : String, _ condition : LogCases = .both) {
+        log(text, type: .error, condition)
     }
     
-    func message(_ text : String) {
-        log(text, type: .message)
+    func newUser(_ text : String, _ condition : LogCases = .both) {
+        log(text, type: .newUser, condition)
+    }
+    
+    func message(_ text : String, _ condition : LogCases = .both) {
+        log(text, type: .message, condition)
     }
     
     public enum conditions : String {

@@ -108,11 +108,20 @@ class ViewController: UIViewController {
         print("session average")
         print(Logger.statics.averageSessionDuration)
         
-        
-        
-        
+    }
+
+    /// these work perfectly :D
+    @IBAction func FIRandConsole(_ sender: Any) {
+        Logger.warning("this is a test warning for both console and firebase", .both)
     }
     
+    @IBAction func FIRlog(_ sender: Any) {
+        Logger.message("this is a test message for firebase only", .firebase)
+    }
+    
+    @IBAction func CONlog(_ sender: Any) {
+        Logger.error("this is an error message for console only", .console)
+    }
     
 }
 
