@@ -86,7 +86,10 @@ class MunitiStats {
     private func newSession() {
     
         // check number of sessions
-        if numberOfSessions == 0 { self.firstSessionFlag = true }
+        if numberOfSessions == 0 {
+            self.firstSessionFlag = true
+            storage[MSSN(.fistSessionDate)] = Node(Date().timeIntervalSince1970)
+        }
         
         // increase number of sessions
         increaseNumberOfSessions()
