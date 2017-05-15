@@ -70,7 +70,7 @@ extension StorageKeys {
 class LocalStorage {
     
     
-    let defaults = UserDefaults.standard
+    private let defaults = UserDefaults.standard
     
     subscript(_ index : String) -> Node {
         get {
@@ -79,6 +79,13 @@ class LocalStorage {
         set {
             self.set(index: index, newValue)
         }
+    }
+    
+    @discardableResult
+    func remove(_ key : String) -> Bool {
+        guard hasKey(key) else { return false }
+        defaults.removeObject(forKey: key)
+        return true
     }
     
     func hasKey(_ key : String) -> Bool {

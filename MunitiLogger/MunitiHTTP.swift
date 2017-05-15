@@ -30,10 +30,8 @@ class MunitiHTTP {
     }
     
     func log(_ text : String, _ type : String) {
-        
         let json : JSON = ["uid" : self.user_id, "log" : text, "type" : type, "date" : Date().timeIntervalSince1970]
         makeRequest(makeRoute(.logs), json, .POST)
-        
     }
     
     /// this function will register the user to firebase
@@ -43,14 +41,16 @@ class MunitiHTTP {
                 "joined" : Date().timeIntervalSince1970
             ]
         ]
-        
-        
         makeRequest( makeRoute(.register), json, .PATCH)
-        
     }
     
+    // these are our current firebase routes
     enum routes : String {
+        
+        // users will be registred here
         case register = "users"
+        
+        // logs will be uploaded here
         case logs = "logs"
     }
     

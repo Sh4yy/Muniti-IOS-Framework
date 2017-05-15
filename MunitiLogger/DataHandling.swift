@@ -25,11 +25,16 @@ class DataSetXY {
             
             // Average of x
             let x = data.flatMap({$0.x})
-            let xA = x.reduce(0,+)/Double(self.size)
+            //let xA = x.reduce(0,+)/Double(self.size)
+            
+            // we can use the extension I made right here
+            let xA = x.computedAverage ?? 0
             
             // Average of y
             let y = data.flatMap({$0.y})
-            let yA = y.reduce(0,+)/Double(self.size)
+            //let yA = y.reduce(0,+)/Double(self.size)
+            
+            let yA = y.computedAverage ?? 0
             
             return (xA,yA)
             

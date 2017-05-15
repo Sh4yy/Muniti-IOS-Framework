@@ -144,6 +144,30 @@ class MunitiStats {
         storage[MSSN(.numberOfSessions)] = Node(numberOfSessions + value)
     }
     
+    /// by using this method user can register a new event
+    @discardableResult
+    func registerEvent(_ key : String) -> Int {
+        let newValue = eventValue(key) + 1
+        storage[eventKey(key)] = Node(newValue)
+        return newValue
+    }
+    
+    /// will return the value of the current event
+    func eventValue(_ key : String) -> Int {
+        return storage[eventKey(key)].intValue ?? 0
+    }
+    
+    /// removes the event from storage
+    @discardableResult
+    func removeEvent(_ key : String) -> Bool {
+        return storage.remove(eventKey(key))
+    }
+    
+    /// generates event storage key
+    private func eventKey(_ key : String) -> String {
+        return "Muniti_event_\(key)"
+    }
+    
 }
 
 

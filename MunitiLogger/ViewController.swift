@@ -18,20 +18,46 @@ class ViewController: UIViewController {
         
         //test()
         
-        Logger.warning("hey this is a warning message")
+//        Logger.warning("hey this is a warning message")
+//        
+//        sleep(1)
+//        
+//        Logger.error("this app just crashed")
+//        
+//        sleep(1)
+//        
+//        Logger.log("new button touched")
+//        
+//        cache = SimpleCache(autoRemove: true, afterMins: 1, refreshRatePerMin: 1)
+//        
+//        cacheTest()
         
-        sleep(1)
+          eventTest()
         
-        Logger.error("this app just crashed")
+    }
+    
+    func eventTest() {
         
-        sleep(1)
+        Logger.firebaseVerbose = true
         
-        Logger.log("new button touched")
+        let eventName = "testEvent"
         
-        cache = SimpleCache(autoRemove: true, afterMins: 1, refreshRatePerMin: 1)
+        print("event value \(Logger.statics.eventValue(eventName))")
         
-        cacheTest()
+        for _ in 1 ... 10 {
+        Logger.statics.registerEvent(eventName)
+        }
         
+        print("event value \(Logger.statics.eventValue(eventName))")
+        
+        Logger.log("now deleting the event \(eventName)", type: .log)
+        
+        Logger.statics.removeEvent(eventName)
+        
+        print("event value \(Logger.statics.eventValue(eventName))")
+        
+        Logger.firebaseVerbose = true
+            
     }
     
     func cacheTest() {
