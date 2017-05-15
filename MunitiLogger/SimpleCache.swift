@@ -12,7 +12,7 @@ class SimpleCache {
     
     private var storage : [String : Any]
     private var storageDate : [String : UnixTime]
-
+    
     private var timer : Timer?
     
     private var autoRemove : Bool
@@ -35,7 +35,11 @@ class SimpleCache {
     }
     
     private func timerCallBack(_ timer : Timer) {
-        print("getting called \(Date().timeIntervalSince1970 - Logger.statics.sessionStarted)")
+        
+        let deadline = Date().timeIntervalSince1970 - (removeAfter.doubleValue * 60.0)
+        
+        
+        
     }
     
     subscript(_ key : String) -> Any? {

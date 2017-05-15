@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var cache : SimpleCache!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -18,18 +20,18 @@ class ViewController: UIViewController {
         
         Logger.warning("hey this is a warning message")
         
-        sleep(2)
+        sleep(1)
         
         Logger.error("this app just crashed")
         
-        sleep(2)
+        sleep(1)
         
         Logger.log("new button touched")
-      
+        
+        cache = SimpleCache(autoRemove: true, afterMins: 3, refreshRatePerMin: 1)
         
     }
-
-   
+    
     func test() {
         
         print("first open")
@@ -42,12 +44,12 @@ class ViewController: UIViewController {
         print(Logger.statics.numberOfSessions)
         
         print("current session duration")
-//        sleep(1)
+        //        sleep(1)
         print(Logger.statics.currentSessionDuration)
-//        sleep(2)
-//        print(Logger.statics.currentSessionDuration)
-//        sleep(3)
-//        print(Logger.statics.currentSessionDuration)
+        //        sleep(2)
+        //        print(Logger.statics.currentSessionDuration)
+        //        sleep(3)
+        //        print(Logger.statics.currentSessionDuration)
         
         print("recent updated")
         print(Logger.statics.recentlyUpdated)
@@ -59,7 +61,7 @@ class ViewController: UIViewController {
         
         
     }
-
-
+    
+    
 }
 

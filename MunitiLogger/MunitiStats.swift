@@ -12,10 +12,6 @@ fileprivate let storage = LocalStorage()
 
 typealias UnixTime = Double
 
-extension Array where Element : Double {
-    
-}
-
 class MunitiStats {
     
     let sessionStarted : Double
@@ -84,7 +80,7 @@ class MunitiStats {
     private var firstSessionFlag = false
     
     private func newSession() {
-    
+        
         // check number of sessions
         if numberOfSessions == 0 {
             self.firstSessionFlag = true
@@ -100,7 +96,7 @@ class MunitiStats {
     private var recentlyUpdatedFlag = false
     
     private func checkUpdate() {
-
+        
         /// get the previous version from storage
         let previousVersion = storage[MSSN(.lastSessionVersion)].stringValue
         /// save new version to storage
@@ -108,7 +104,7 @@ class MunitiStats {
         
         /// compare new and previous version to see if changed
         guard let pv = previousVersion,
-              let nv = self.currentVersion else { return }
+            let nv = self.currentVersion else { return }
         
         if pv != nv {
             self.recentlyUpdatedFlag = true

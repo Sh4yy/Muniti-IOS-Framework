@@ -56,7 +56,7 @@ func +(lhs : FloatingPointType, rhs: FloatingPointType) -> Double {
 }
 
 /// Floating Point Computed Average
-extension Array where Element : FloatingPointType {
+extension Array where Element: FloatingPointType {
     
     /// returns an optional average value
     var computedAverage : Double? {
@@ -145,7 +145,7 @@ extension Date {
     /// * more than a year -> 23 Mar 2017
     var timeAgoInWords : String {
         let components = Calendar.current.dateComponents([.second,.minute,.hour,
-                                      .day,.month,.year],from: self, to: Date())
+                                                          .day,.month,.year],from: self, to: Date())
         
         if let year = components.year, year > 0 {
             return "\(dayMedium) \(monthMedium) \(yearMedium)"
