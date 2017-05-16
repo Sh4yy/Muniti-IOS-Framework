@@ -22,24 +22,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NAL-cL-Yve">
-                                <rect key="frame" x="113.5" y="492" width="148" height="110"/>
+                                <rect key="frame" x="112.5" y="452" width="150" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uht-Z9-djc">
-                                        <rect key="frame" x="0.0" y="0.0" width="148" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="30"/>
                                         <state key="normal" title="Send Log to Firebase"/>
                                         <connections>
                                             <action selector="FIRlog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bkt-mt-U1v"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ume-lZ-lfQ">
-                                        <rect key="frame" x="0.0" y="40" width="148" height="30"/>
+                                        <rect key="frame" x="0.0" y="40" width="150" height="30"/>
                                         <state key="normal" title="Send Log to Console"/>
                                         <connections>
                                             <action selector="CONlog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sdc-Lw-k3p"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLe-vO-6Ut">
+                                        <rect key="frame" x="0.0" y="80" width="150" height="30"/>
+                                        <state key="normal" title="Send Log to Telegram"/>
+                                        <connections>
+                                            <action selector="TLLog:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZQl-fy-3Md"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZS-zY-VNO">
-                                        <rect key="frame" x="0.0" y="80" width="148" height="30"/>
+                                        <rect key="frame" x="0.0" y="120" width="150" height="30"/>
                                         <state key="normal" title="Console and Firebase"/>
                                         <connections>
                                             <action selector="FIRandConsole:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2gV-WR-LIw"/>

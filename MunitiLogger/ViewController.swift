@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , MunitiHTTPDelagate {
     
     var cache : SimpleCache!
     
@@ -32,8 +32,19 @@ class ViewController: UIViewController {
 //        
 //        cacheTest()
         
+        
+          Logger.http.verboseDelagate = self
+        
           eventTest()
         
+    }
+    
+    func uploadVerbose(_ json: JSON) {
+        print(json)
+    }
+    
+    func userRegister(json: JSON) {
+        print(json)
     }
     
     func eventTest() {
@@ -106,21 +117,25 @@ class ViewController: UIViewController {
         print(Logger.statics.recentlyUpdated)
         
         print("session average")
-        print(Logger.statics.averageSessionDuration)
+        print(Logger.statics.averageSessionDuration ?? "")
         
     }
 
     /// these work perfectly :D
     @IBAction func FIRandConsole(_ sender: Any) {
-        Logger.warning("this is a test warning for both console and firebase", .both)
+        Logger.warning("this is a test warning for both console and firebase", [.console,.firebase])
     }
     
     @IBAction func FIRlog(_ sender: Any) {
-        Logger.message("this is a test message for firebase only", .firebase)
+        Logger.message("this is a test message for firebase only", [.firebase])
     }
     
     @IBAction func CONlog(_ sender: Any) {
-        Logger.error("this is an error message for console only", .console)
+        Logger.error("this is an error message for console only", [.console])
+    }
+    
+    @IBAction func TLLog(_ sender: Any) {
+        Logger.error("this is another error for telegram", [.telegram])
     }
     
 }

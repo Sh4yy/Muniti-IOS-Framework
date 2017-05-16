@@ -7,12 +7,26 @@
 //
 import Foundation
 
+protocol MunitiHTTPDelagate {
+    
+    /// json will contain uid, log, type, date
+    func uploadVerbose(_ json : JSON)
+    
+    /// json will contain uid and date
+    func userRegister(json : JSON)
+    
+}
+
 class MunitiHTTP {
     
     let storage = LocalStorage()
     
     let firebase_url : String
     let firebase_token : String
+    
+    /// users can use this delagate to upload their data
+    /// to somewhere other than firebase
+    var verboseDelagate : MunitiHTTPDelagate? = nil
     
     init(url : String, token : String) {
         self.firebase_url = url
@@ -31,17 +45,22 @@ class MunitiHTTP {
     
     func log(_ text : String, _ type : String) {
         let json : JSON = ["uid" : self.user_id, "log" : text, "type" : type, "date" : Date().timeIntervalSince1970]
-        makeRequest(makeRoute(.logs), json, .POST)
+        if verboseDelagate != nil {
+            verboseDelagate?.uploadVerbose(json)
+        }
+        MunitiHTTP.makeRequest(makeRoute(.logs), json, .POST)
     }
     
     /// this function will register the user to firebase
     func register() {
         let json : JSON = [
             "\(self.user_id)" : [
-                "joined" : Date().timeIntervalSince1970
-            ]
-        ]
-        makeRequest( makeRoute(.register), json, .PATCH)
+            "joined" : Date().timeIntervalSince1970 ]]
+        
+        if verboseDelagate != nil {
+            verboseDelagate?.userRegister(json: json)
+        }
+        MunitiHTTP.makeRequest( makeRoute(.register), json, .PATCH)
     }
     
     // these are our current firebase routes
@@ -59,7 +78,7 @@ class MunitiHTTP {
     }
     
     /// this will be the endpoint of every request
-    func makeRequest(_ route : String, _ json : JSON, _ method : httpMethods = .POST, completion : ((Data?, URLResponse?, Error?) -> Void)? = nil) {
+    static func makeRequest(_ route : String, _ json : JSON, _ method : httpMethods = .POST, completion : ((Data?, URLResponse?, Error?) -> Void)? = nil) {
         guard let url = URL(string: route) else { return }
         var request = URLRequest(url: url)
         

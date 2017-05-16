@@ -21,6 +21,7 @@
 		E4CAF4331EC7531600DBA9ED /* Muniti.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF4321EC7531600DBA9ED /* Muniti.swift */; };
 		E4CAF4351EC753BC00DBA9ED /* MunitiStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF4341EC753BC00DBA9ED /* MunitiStats.swift */; };
 		E4D45EB01EC8D2FF00C1A99F /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D45EAF1EC8D2FF00C1A99F /* CommonExtensions.swift */; };
+		E4DA67621ECB53E7008F9E04 /* TLLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DA67611ECB53E7008F9E04 /* TLLogger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E4CAF4321EC7531600DBA9ED /* Muniti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Muniti.swift; sourceTree = "<group>"; };
 		E4CAF4341EC753BC00DBA9ED /* MunitiStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MunitiStats.swift; sourceTree = "<group>"; };
 		E4D45EAF1EC8D2FF00C1A99F /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
+		E4DA67611ECB53E7008F9E04 /* TLLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLLogger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				E4D45EAF1EC8D2FF00C1A99F /* CommonExtensions.swift */,
 				E496FDEF1EC95FD8002DDE3C /* DispatchDSL.swift */,
 				E4CAF4301EC752EE00DBA9ED /* MunitiHTTP.swift */,
+				E4DA67611ECB53E7008F9E04 /* TLLogger.swift */,
 				E4CAF4341EC753BC00DBA9ED /* MunitiStats.swift */,
 				E4CAF4321EC7531600DBA9ED /* Muniti.swift */,
 				E4CAF40E1EC752BB00DBA9ED /* AppDelegate.swift */,
@@ -230,6 +233,7 @@
 				E4CAF4111EC752BB00DBA9ED /* ViewController.swift in Sources */,
 				E4CAF40F1EC752BB00DBA9ED /* AppDelegate.swift in Sources */,
 				E4CAF4311EC752EE00DBA9ED /* MunitiHTTP.swift in Sources */,
+				E4DA67621ECB53E7008F9E04 /* TLLogger.swift in Sources */,
 				E4CAF42F1EC752DC00DBA9ED /* Storage.swift in Sources */,
 				E4CAF4351EC753BC00DBA9ED /* MunitiStats.swift in Sources */,
 				E496FDF01EC95FD8002DDE3C /* DispatchDSL.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import UIKit
 
-let Logger = Muniti(url : "https://muniti-79a0b.firebaseio.com", token : "------")
+let Logger = Muniti(url : "https://muniti-79a0b.firebaseio.com", token : "------", telegramToken : "243820160:AAFhhft325hcQQ4HtdjuYPWG8lLmx_ZWQEM", telegramChatId : "124858558")
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
