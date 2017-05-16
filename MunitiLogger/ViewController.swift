@@ -110,7 +110,7 @@ class ViewController: UIViewController , MunitiHTTPDelagate {
         print(Logger.statics.currentSessionDuration)
         //        sleep(2)
         //        print(Logger.statics.currentSessionDuration)
-        //        sleep(3)
+        //        sleep(3) //
         //        print(Logger.statics.currentSessionDuration)
         
         print("recent updated")
