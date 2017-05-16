@@ -40,11 +40,11 @@ class ViewController: UIViewController , MunitiHTTPDelagate {
     }
     
     func uploadVerbose(_ json: JSON) {
-        print(json)
+      ///  print(json)
     }
     
     func userRegister(json: JSON) {
-        print(json)
+      ///  print(json)
     }
     
     func eventTest() {
@@ -120,22 +120,24 @@ class ViewController: UIViewController , MunitiHTTPDelagate {
         print(Logger.statics.averageSessionDuration ?? "")
         
     }
+    
+    @IBOutlet weak var textField: UITextField!
 
     /// these work perfectly :D
     @IBAction func FIRandConsole(_ sender: Any) {
-        Logger.warning("this is a test warning for both console and firebase", [.console,.firebase])
+        Logger.warning(textField.text ?? "", [.console,.firebase])
     }
     
     @IBAction func FIRlog(_ sender: Any) {
-        Logger.message("this is a test message for firebase only", [.firebase])
+        Logger.message(textField.text ?? "", [.firebase])
     }
     
     @IBAction func CONlog(_ sender: Any) {
-        Logger.error("this is an error message for console only", [.console])
+        Logger.error(textField.text ?? "", [.console])
     }
     
     @IBAction func TLLog(_ sender: Any) {
-        Logger.error("this is another error for telegram", [.telegram])
+        Logger.error(textField.text ?? "", [.telegram])
     }
     
 }
