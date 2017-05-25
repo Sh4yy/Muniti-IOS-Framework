@@ -4,7 +4,7 @@
 //
 //  Created by Shayan on 5/25/17.
 //  Copyright © 2017 Shayan. All rights reserved.
-//
+
 
 import Foundation
 
@@ -21,7 +21,6 @@ class StorageKey<ValueType> : StorageKeys {
     }
     
 }
-
 
 extension StorageKeys {
     static let accessToken = StorageKey<Int>("hi")
@@ -111,6 +110,8 @@ class Node {
                 return Int64(v)
             } else if let v = self.stringValue {
                 return Int64(v)
+            } else if let v = self.intValue {
+                return Int64(v)
             }
             
             return nil
@@ -138,6 +139,8 @@ class Node {
                 return Int32(v)
             } else if let v = self.stringValue {
                 return Int32(v)
+            } else if let v = self.intValue {
+                return Int32(v)
             }
             
             return nil
@@ -154,6 +157,8 @@ class Node {
             } else if let v = self.doubleValue {
                 return Double(v)
             } else if let v = self.stringValue {
+                return Double(v)
+            } else if let v = self.intValue {
                 return Double(v)
             }
             
@@ -231,3 +236,12 @@ extension Dictionary where Value : Node {
     }
     
 }
+
+
+
+
+
+
+
+
+
