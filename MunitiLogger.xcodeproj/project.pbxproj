@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F76A6A71EC79082004D7BA4 /* DataHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F76A6A61EC79082004D7BA4 /* DataHandling.swift */; };
 		E42338851EC94B7A002FEECC /* SimpleCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42338841EC94B7A002FEECC /* SimpleCache.swift */; };
+		E435ED971ED76E1F0056190A /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435ED961ED76E1F0056190A /* Node.swift */; };
 		E496FDF01EC95FD8002DDE3C /* DispatchDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E496FDEF1EC95FD8002DDE3C /* DispatchDSL.swift */; };
 		E4CAF40F1EC752BB00DBA9ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF40E1EC752BB00DBA9ED /* AppDelegate.swift */; };
 		E4CAF4111EC752BB00DBA9ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CAF4101EC752BB00DBA9ED /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		4F76A6A61EC79082004D7BA4 /* DataHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHandling.swift; sourceTree = "<group>"; };
 		E42338841EC94B7A002FEECC /* SimpleCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleCache.swift; sourceTree = "<group>"; };
+		E435ED961ED76E1F0056190A /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		E496FDEF1EC95FD8002DDE3C /* DispatchDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchDSL.swift; sourceTree = "<group>"; };
 		E4CAF40B1EC752BB00DBA9ED /* MunitiLogger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MunitiLogger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CAF40E1EC752BB00DBA9ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				E4CAF4151EC752BB00DBA9ED /* Assets.xcassets */,
 				E4CAF4171EC752BB00DBA9ED /* LaunchScreen.storyboard */,
 				E4CAF41A1EC752BB00DBA9ED /* Info.plist */,
+				E435ED961ED76E1F0056190A /* Node.swift */,
 			);
 			path = MunitiLogger;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				E4D45EB01EC8D2FF00C1A99F /* CommonExtensions.swift in Sources */,
 				E4CAF4331EC7531600DBA9ED /* Muniti.swift in Sources */,
 				E4CAF4111EC752BB00DBA9ED /* ViewController.swift in Sources */,
+				E435ED971ED76E1F0056190A /* Node.swift in Sources */,
 				E4CAF40F1EC752BB00DBA9ED /* AppDelegate.swift in Sources */,
 				E4CAF4311EC752EE00DBA9ED /* MunitiHTTP.swift in Sources */,
 				E4DA67621ECB53E7008F9E04 /* TLLogger.swift in Sources */,

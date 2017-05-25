@@ -41,7 +41,7 @@ class Muniti {
         // start registering the user activity
         Logger.statics.registerSession()
         
-        // if its first session, register the user on firebase
+        // if it's first session, register the user on firebase
         if statics.isFirstSession {
             http.register()
         }
